@@ -388,11 +388,11 @@ local neon = (function() -- Open sourced neon module
 end)()
 --end
 
-function RayfieldLibrary:Notify(Titles,Descriptions,Image)
+function RayfieldLibrary:Notify(Title,Description,Image)
 	spawn(function()
 		local Notification = Notifications.Template:Clone()
 		Notification.Parent = Notifications
-		Notification.Name = Titles or "Random"
+		Notification.Name = Title or "Random"
 		Notification.Visible = true
 
 		local blurlight = nil
@@ -407,10 +407,10 @@ function RayfieldLibrary:Notify(Titles,Descriptions,Image)
 		end
 
 
-		Notification.Title.Text = Titles or "Unknown"
+		Notification.Title.Text = Title or "Unknown"
 		Notification.Title.TextTransparency = 1
 		Notification.Title.TextColor3 = Color3.fromRGB(240,240,240)
-		Notification.Description.Text = Descriptions or "Unknown"
+		Notification.Description.Text = Description or "Unknown"
 		Notification.Description.TextTransparency = 1
 		Notification.Description.TextColor3 = Color3.fromRGB(240,240,240)
 		if Image then
